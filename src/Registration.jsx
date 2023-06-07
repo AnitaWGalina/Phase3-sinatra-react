@@ -1,95 +1,109 @@
-import React, { useState } from "react";
-import "./Registration.css";
-function RegistrationForm() {
+import React, { useState } from 'react';
+
+const RegistrationForm = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [location, setLocation] = useState('');
+  const [country, setCountry] = useState('');
+  const [dateOfBirth, setDateOfBirth] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+ 
+    console.log('Form submitted:', {
+      name,
+      email,
+      password,
+      location,
+      country,
+      dateOfBirth,
+    });
+  };
+
   return (
-    <div className="form">
-      <div className="form-body">
-        <div className="username">
-          <label className="form__label" for="firstName">
-            First Name{" "}
-          </label>
-          <input
-            className="form__input"
-            type="text"
-            id="firstName"
-            placeholder="First Name"
-          />
-        </div>
-        <div className="DOB">
-          <label className="form__label" for="DOB">
-            DOB{" "}
-          </label>
-          <input
-            type="text"
-            name=""
-            id="DOB"
-            className="form__input"
-            placeholder="Date of Birth"
-          />
-        </div>
-        <div className="email">
-          <label className="form__label" for="email">
-            Email{" "}
-          </label>
-          <input
-            type="email"
-            id="email"
-            className="form__input"
-            placeholder="Email"
-          />
-        </div>
-        <div className="Country">
-          <label className="form__label" for="Country">
-            Country{" "}
-          </label>
-          <input
-            className="form__input"
-            type="country"
-            id="country"
-            placeholder="Country"
-          />
-        </div>
-        <div className="Location">
-          <label className="form__label" for="Location">
-            Location{" "}
-          </label>
-          <input
-            type="text"
-            name=""
-            id="Location"
-            className="form__input"
-            placeholder="Location"
-          />
-        </div>
-        <div className="password">
-          <label className="form__label" for="password">
-            Password{" "}
-          </label>
-          <input
-            className="form__input"
-            type="password"
-            id="password"
-            placeholder="Password"
-          />
-        </div>
-        <div className="confirm-password">
-          <label className="form__label" for="confirmPassword">
-            Confirm Password{" "}
-          </label>
-          <input
-            className="form__input"
-            type="password"
-            id="confirmPassword"
-            placeholder="Confirm Password"
-          />
-        </div>
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
       </div>
-      <div class="footer">
-        <button type="submit" class="btn">
-          Register
-        </button>
+
+      <div>
+        <label htmlFor="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
       </div>
-    </div>
+
+      <div>
+        <label htmlFor="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+      </div>
+
+      <div>
+        <label htmlFor="confirmPassword">Confirm Password:</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          required
+        />
+      </div>
+
+      <div>
+        <label htmlFor="location">Location:</label>
+        <input
+          type="text"
+          id="location"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+          required
+        />
+      </div>
+
+      <div>
+        <label htmlFor="country">Country:</label>
+        <input
+          type="text"
+          id="country"
+          value={country}
+          onChange={(e) => setCountry(e.target.value)}
+          required
+        />
+      </div>
+
+      <div>
+        <label htmlFor="dateOfBirth">Date of Birth:</label>
+        <input
+          type="date"
+          id="dateOfBirth"
+          value={dateOfBirth}
+          onChange={(e) => setDateOfBirth(e.target.value)}
+          required
+        />
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
   );
-}
+};
+
 export default RegistrationForm;
