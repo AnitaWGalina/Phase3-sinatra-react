@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import RegistrationForm from './Registration'
-import Login from './Login'
+import RegistrationForm from './Registration';
+import Login from './Login';
 import Profile from "./Profile";
 import { ChakraProvider } from "@chakra-ui/react";
 

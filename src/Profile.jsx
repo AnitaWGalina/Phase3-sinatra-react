@@ -1,47 +1,86 @@
-import React, {useState, useMemo, useCallback, useContext} from "react";
-import './Profile.css';
-import { useState } from "react";
-import Group from "./Group";
-import Colorbox from "./Colorbox";
+import React, { useState } from "react";
+import  "./Profile.css";
 
-import { months, calcButtonTextColor } from "../tools";
-import RegistrationForm from "./Registration";
+const UserProfile = () => {
+  const [name] = useState("John Doe");
+  const [email, setEmail] = useState("johndoe@example.com");
+  const [dateOfBirth] = useState("1990-01-01");
+  const [location, setLocation] = useState("New York");
+  const [country, setCountry] = useState("United States");
+  const [editMode, setEditMode] = useState(false);
 
-export default function EditableUserProfile({ stored, startEditCallback }) {
-  console.log();
+  const handleEditClick = () => {
+    setEditMode(true);
+  };
 
-  const buttonStyle = {
-    backgroundColor: stored.color,
-    color: calcButtonTextColor(stored.color),
+  const handleSaveClick = () => {
+    // Perform save logic for updated email, location, and country
+    setEditMode(false);
+  };
+
+  const handleCancelClick = () => {
+    // Reset the form values and exit edit mode
+    setEmail("anitag@example.com");
+    setLocation("New York");
+    setCountry("United States");
+    setEditMode(false);
   };
 
   return (
     <div>
-      <Group>
-        <h2>Name:</h2> {stored.name}
-      </Group>
-      <Group>
-        <h2>Date of Birth:</h2> {months.getShortName(stored.month)} {stored.day}
-      </Group>
-      <Group>
-        <h2>Email address</h2>{stored.emailaddress}
-      </Group>
-      <Group>
-        <h2>Country</h2>{stored.emailaddress}
-      </Group>
-      <Group>
-        <h2>Location</h2>{stored.emailaddress}
-      </Group>
-      <Group>
-        <h2>Change Password</h2>{stored.password}
-      </Group>
-    
-    
-  <Group>
-        <button style={buttonStyle} onClick={startEditCallback}>
-          Edit
-        </button>
-      </Group>
+      <h2>User Profile</h2>
+      <p>
+        <strong>Name:</strong> {name}
+      </p>
+      <p>
+        <strong>Email:</strong>{" "}
+        {editMode ? (
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        ) : (
+          email
+        )}
+      </p>
+      <p>
+        <strong>Date of Birth:</strong> {dateOfBirth}
+      </p>
+      <p>
+        <strong>Location:</strong>{" "}
+        {editMode ? (
+          <input
+            type="text"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+          />
+        ) : (
+          location
+        )}
+      </p>
+      <p>
+        <strong>Country:</strong>{" "}
+        {editMode ? (
+          <input
+            type="text"
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
+          />
+        ) : (
+          country
+        )}
+      </p>
+      {editMode ? (
+        <div>
+          <button onClick={handleSaveClick}>Save</button>
+          <button onClick={handleCancelClick}>Cancel</button>
+        </div>
+      ) : (
+        <button onClick={handleEditClick}>Edit Profile</button>
+      )}
     </div>
   );
-}
+};
+
+export default UserProfile;
