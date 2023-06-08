@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Registration.css';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom';
 
 const RegistrationForm = () => {
   const [name, setName] = useState('');
@@ -9,18 +10,31 @@ const RegistrationForm = () => {
   const [location, setLocation] = useState('');
   const [country, setCountry] = useState('');
   const [dateOfBirth, setDateOfBirth] = useState('');
+  const history = useHistory();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
- 
-    console.log('Form submitted:', {
-      name,
-      email,
-      password,
-      location,
-      country,
-      dateOfBirth,
-    });
+
+    fetch("https://localhost:9292/registration", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        password: password,
+        confirmPassword: confirmPassword,
+        location: location,
+        country: country,
+        dateOfBirth: dateOfBirth,
+      }),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log(data);
+        history.push("/Login");
+      });
   };
 
   return (
