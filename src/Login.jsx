@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./Login.css";
 import React, { useState } from "react";
 
@@ -11,6 +11,8 @@ const Login = () => {
     setDataInput([info]);
   };
   return (
+    <>
+    <h1>LOGIN</h1>
     <div>
       <form action="" onSubmit={submitThis}>
         <div>
@@ -36,6 +38,7 @@ const Login = () => {
         <button type="submit">Login</button>
       </form>
     </div>
+    </>
   );
 };
 
