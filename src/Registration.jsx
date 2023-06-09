@@ -12,10 +12,10 @@ const RegistrationForm = () => {
   const [dateOfBirth, setDateOfBirth] = useState('');
   const history = useHistory();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit=(e) => {
     e.preventDefault();
 
-    fetch("https://localhost:9292/registration", {
+    fetch("http://localhost:9292/registration", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

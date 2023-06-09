@@ -20,7 +20,9 @@ function App() {
             </Route>
             <Route exact path="/Login">
               <Login />
-              <Profile />
+           </Route>
+           <Route exact path="/Profile">
+            <Profile />
             </Route>
           </div>
         </Switch>

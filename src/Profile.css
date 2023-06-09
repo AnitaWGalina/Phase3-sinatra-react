@@ -1,0 +1,52 @@
+/* UserProfile.css */
+
+.profile-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-container h2 {
+  margin-bottom: 10px;
+}
+
+.profile-container p {
+  margin-bottom: 5px;
+}
+
+.profile-container strong {
+  font-weight: bold;
+}
+
+.profile-container input[type="email"],
+.profile-container input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.profile-container button {
+  display: block;
+  width: 100px;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.profile-container button:hover {
+  background-color: #45a049;
+}
+
+.profile-container .edit-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
