@@ -82,6 +82,7 @@ const UserProfile = () => {
         <button onClick={handleEditClick}>Edit Profile</button>
         </div>
       )}
+      <br />
       <UserForm/>
     </div>
 

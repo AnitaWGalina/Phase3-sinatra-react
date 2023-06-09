@@ -82,7 +82,7 @@ const UserForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
+      <div id="Hey">
         <label htmlFor="receivedWater">
           Have you received water this week?
         </label>
@@ -98,7 +98,7 @@ const UserForm = () => {
         </select>
       </div>
 
-      <div>
+      <div id="Bye">
         <label htmlFor="powerOutage">
           Are you currently experiencing a power outage?
         </label>
