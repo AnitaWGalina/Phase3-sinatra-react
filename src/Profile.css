@@ -50,3 +50,25 @@
   justify-content: space-between;
   margin-top: 10px;
 }
+
+#Profile{
+    justify-content: flex-start;
+    margin: 5px;
+    font-size: 20px;
+    font-style: bold;
+    background-color: #446284;
+}
+
+#User{
+justify-content: flex-start;
+    margin: 5px;
+    font-size: 20px;
+    font-style: bold;
+    background-color: #446284;
+}
+
+h2{
+    font-size: 20px;
+    font-style: bold;
+    background-color: #446284;
+}

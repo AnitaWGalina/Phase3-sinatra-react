@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import  "./Profile.css";
 
 const UserProfile = () => {
-  const [name] = useState("John Doe");
-  const [email, setEmail] = useState("johndoe@example.com");
+  const [name] = useState("Anita Galina");
+  const [email, setEmail] = useState("anitagalina@gmail.com");
   const [dateOfBirth] = useState("1990-01-01");
   const [location, setLocation] = useState("New York");
   const [country, setCountry] = useState("United States");
@@ -72,12 +72,15 @@ const UserProfile = () => {
         )}
       </p>
       {editMode ? (
-        <div>
+        <div id = "Profile">
           <button onClick={handleSaveClick}>Save</button>
+        <br/>
           <button onClick={handleCancelClick}>Cancel</button>
         </div>
       ) : (
+        <div id = "User">
         <button onClick={handleEditClick}>Edit Profile</button>
+        </div>
       )}
     </div>
   );

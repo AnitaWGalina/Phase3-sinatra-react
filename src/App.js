@@ -5,7 +5,7 @@ import Profile from "./Profile";
 import { ChakraProvider} from "@chakra-ui/react";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
-
+import UserForm from "./Form";
 
 
 function App() {
@@ -23,6 +23,9 @@ function App() {
            </Route>
            <Route exact path="/Profile">
             <Profile />
+            </Route>
+           <Route exact path="/UserForm">
+            <UserForm />
             </Route>
           </div>
         </Switch>
