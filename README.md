@@ -18,7 +18,7 @@ RUBY
 
 ### DESCRIPTION. 
 
-This project will focus on providing users with the option to track the supply of water to their respective locations.The project will take into account the account status of said user , whether they have recived the supply of water from the designated muncipality , a provison for them to make a complaint if not so and track whether the matter has been resolved.Additionally , there will be a provision for users to make direct complaints in regard to electricity blackouts and whether the matter has been resolved.
+This project will focus on providing users with the option to track the supply of water to their respective locations.The project will take into account the account status of said user , whether they have received the supply of water from the designated municipality , a provision for them to make a complaint if not so and track whether the matter has been resolved.Additionally , there will be a provision for users to make direct complaints in regard to electricity blackouts and whether the matter has been resolved.
 
 
 

@@ -8,6 +8,9 @@ import React, { useEffect, useState } from 'react';
 import UserForm from "./Form";
 
 
+
+
+
 function App() {
   const [data, setData] = useState([]);
 
@@ -24,9 +27,10 @@ function App() {
       console.error("Error fetching data:", error);
     }
   };
+  const API_BASE_URL = "http://localhost:9292"; // Replace with your actual API base URL
+  
   // Simulating a user registration
   function registerUser(email, password) {
-    
     return new Promise((resolve, reject) => {
       // Simulating asynchronous registration process
       setTimeout(() => {
@@ -36,11 +40,8 @@ function App() {
     });
   }
 
-
   function loginUser(email, password) {
-  
     return new Promise((resolve, reject) => {
-
       setTimeout(() => {
         const loggedInUserName = "123456"; // ID of the logged-in user
         resolve(loggedInUserName);
@@ -48,7 +49,6 @@ function App() {
     });
   }
 
-  
   async function retrieveUserData(email, password) {
     try {
       const registeredUserId = await registerUser(username, password);
@@ -57,14 +57,12 @@ function App() {
       const loggedInUserId = await loginUser(username, password);
       console.log("User logged in with email:", loggedInUserId);
 
- 
       const userData = await fetchData(loggedInUserId);
       console.log("User data:", userData);
     } catch (error) {
       console.error("Error:", error);
     }
   }
-
 
   const username = "anitagalina21@gmail.com";
   const password = "password123";
