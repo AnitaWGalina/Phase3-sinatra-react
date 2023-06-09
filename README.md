@@ -11,7 +11,10 @@ CSS
 RUBY
 
 ### DELIVERABLES 
-
+1.Use Active Record to interact with a database.
+2.Have a minimum of two models with a one-to-many relationship.
+3.Create API routes in Sinatra that handles at least three different CRUD actions for at least one of your Active Record models.
+4.Build a separate React frontend application that interacts with the API to perform CRUD actions.
 
 ### DESCRIPTION. 
 
