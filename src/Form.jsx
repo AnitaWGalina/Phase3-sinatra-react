@@ -53,6 +53,9 @@ const UserForm = () => {
   const [receivedWater, setReceivedWater] = useState("");
   const [powerOutage, setPowerOutage] = useState("");
   const [waterDescription, setWaterDescription] = useState("");
+  const history = useHistory();
+  
+
 
 
 
@@ -72,21 +75,13 @@ const UserForm = () => {
         .then((resp) => resp.json())
         .then((data) => {
           console.log(data);
-          history.push("/RegistrationForm");
+          history.push("/Profile");
         });
     };
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    // Perform form submission logic
-    console.log("Form submitted:", {
-      receivedWater,
-      powerOutage,
-      waterDescription,
-    });
-  };
+
 
   return (
-    <form onSubmit={handleFormSubmit}>
+    <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="receivedWater">
           Have you received water this week?
@@ -141,8 +136,10 @@ const UserForm = () => {
           />
         </div>
       )}
-
+       <div id = "Submit">
+        
       <button type="submit">Submit</button>
+      </div>
     </form>
   );
 };

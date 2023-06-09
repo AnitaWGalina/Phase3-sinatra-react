@@ -4,12 +4,29 @@ import Login from "./Login";
 import Profile from "./Profile";
 import { ChakraProvider} from "@chakra-ui/react";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-
+import React, { useEffect, useState } from 'react';
 import UserForm from "./Form";
 
 
 function App() {
  
+  
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://localhost:9292/users'); 
+      const jsonData = await response.json();
+      setData(jsonData);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
   return (
     <ChakraProvider>
       <Router>
@@ -24,10 +41,15 @@ function App() {
            <Route exact path="/Profile">
             <Profile />
             </Route>
-           <Route exact path="/UserForm">
+           <Route exact path="/Form">
             <UserForm />
             </Route>
-          </div>
+               
+    
+
+  </div>
+
+
         </Switch>
       </Router>
     </ChakraProvider>
@@ -35,3 +57,4 @@ function App() {
 }
 
 export default App;
+

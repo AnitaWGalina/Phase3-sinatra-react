@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import  "./Profile.css";
-
+import UserForm from "./Form";
 const UserProfile = () => {
   const [name] = useState("Anita Galina");
   const [email, setEmail] = useState("anitagalina@gmail.com");
@@ -82,7 +82,9 @@ const UserProfile = () => {
         <button onClick={handleEditClick}>Edit Profile</button>
         </div>
       )}
+      <UserForm/>
     </div>
+
   );
 };
 
